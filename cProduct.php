@@ -58,7 +58,8 @@ class productsCart {
 
   public function setDiscount($pID, $discountValue, $setQty = 0) {
     $this->productsList[$pID]['discount_applied'] = true;
-    $this->productsList[$pID]['discount']         = $setQty > 0 ? $setQty * $discountValue : $discountValue;
+    $this->productsList[$pID]['discount']         = $discountValue;
+    $this->productsList[$pID]['discount_qty']     = $setQty > 1 ? $setQty : 1;
   }
 
   public function getProductQty($pID) {
